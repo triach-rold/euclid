@@ -26,7 +26,7 @@ void generateAnagrams(const std::string& word, const std::unordered_set<std::str
     } while (std::next_permutation(currentAnagram.begin(), currentAnagram.end()));
 }
 int main(int argc, char* argv[]) {
-    std::string dictionaryFilename = "dictionary.txt";
+    std::string dictionaryFilename = "../resources/dictionary.txt";
     for (int i = 1; i < argc - 1; ++i) {
         if (std::strcmp(argv[i], "--custom-dictionary") == 0) {
             dictionaryFilename = argv[i + 1];
