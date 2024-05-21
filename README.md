@@ -1,7 +1,13 @@
-# Triach Rold's Math Library
+# Triach Rold's Libraries
 
-- **Euclidean GCD** -> A method to calculate the [Greatest Common Divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) of two numbers using [Euclid's Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm). (Last Updated on 17th May, 2024)
-- **nCr Operator** -> A method to calculate the [Combination](https://en.wikipedia.org/wiki/Combination) of two numbers using the definition. (Last Updated on 17th May, 2024)
-- **Newton's Square Root** -> A method to calculate the [square root](https://en.wikipedia.org/wiki/Square_root) of a number using [Newton's Method](https://en.wikipedia.org/wiki/Newton%27s_method). (Last Updated on 15th April, 2024)
-- **Newton's nth Root** -> A method to calculate the [nth root](https://en.wikipedia.org/wiki/Nth_root) of a number using [Newton's Method](https://en.wikipedia.org/wiki/Newton%27s_method). (Last Updated on 15th April, 2024)
-- **Anagram** -> Finds all possible anagrams for a given word. Use --custom-dictionary filename.txt for special comparisons to a custom dictionary (it chooses dictionary.txt by default). (Last Updated on 17th May, 2024)
+## Table of contents- 
+
+### Without specific documentation 
+
+- **Euclidean GCD** -> A method to calculate the [Greatest Common Divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) of two numbers using [Euclid's Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm).
+- **nCr Operator** -> A method to calculate the [Combination](https://en.wikipedia.org/wiki/Combination) of two numbers using the definition.
+- **Newton's Square Root** -> A method to calculate the [square root](https://en.wikipedia.org/wiki/Square_root) of a number using [Newton's Method](https://en.wikipedia.org/wiki/Newton%27s_method).
+
+### With Specific Documentation
+
+- **Anagram** -> Finds all possible anagrams for a given word. Use `--custom-dictionary filename.txt` for special comparisons to a custom dictionary (it chooses dictionary.txt by default).
