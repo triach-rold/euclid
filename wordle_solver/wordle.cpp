@@ -5,7 +5,11 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
-
+#define GREEN_TEXT "\033[1;32m"
+#define YELLOW_TEXT "\033[1;33m"
+#define RESET_TEXT "\033[0m"
+#define CYAN_TEXT "\033[1;36m"
+#define RED_TEXT "\033[1;31m"
 std::vector<std::string> loadDictionary(const std::string &filePath) {
     std::vector<std::string> words;
     std::ifstream file(filePath.c_str());
@@ -19,7 +23,10 @@ std::vector<std::string> loadDictionary(const std::string &filePath) {
 }
 std::string getFeedback() {
     std::string feedback;
-    std::cout << "Enter data from the guess- (G for Green, Y for Yellow, - for Grey): ";
+    std::cout << "Enter data from the guess-" << RESET_TEXT << "("
+          << GREEN_TEXT << "G" << RESET_TEXT << " for Green, "
+          << YELLOW_TEXT << "Y" << RESET_TEXT << " for Yellow, "
+          << "-" << " for Grey): ";
     std::cin >> feedback;
     return feedback;
 }
@@ -73,24 +80,30 @@ std::string makeGuess(const std::vector<std::string> &words) {
     return words[std::rand() % words.size()];
 }
 int main() {
+    int guess_num = 0;
     std::srand(static_cast<unsigned int>(std::time(0)));
     std::string dictionaryPath = "resources/dictionary.txt";
     std::vector<std::string> words = loadDictionary(dictionaryPath);
     if (words.empty()) {
-        std::cerr << "Dictionary is empty or not found!" << std::endl;
+        std::cerr << "Dictionary is empty and/or not found!" << std::endl;
         return 1;
     }
     while (true) {
+        guess_num++;
         std::string guess = makeGuess(words);
-        std::cout << "Guess: " << guess << std::endl;
+        std::cout << CYAN_TEXT <<  "Guess: " << RESET_TEXT << RED_TEXT << guess << RESET_TEXT << std::endl;
         std::string feedback = getFeedback();
         if (feedback == "GGGGG") {
-            std::cout << "Congratulations! You've found the word!" << std::endl;
+            if(guess_num==1){
+                std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT<< " attempt." RESET_TEXT << std::endl;
+            }else{
+                std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT<< " attempts." RESET_TEXT << std::endl;
+            }
             break;
         }
         words = filterWords(words, guess, feedback);
         if (words.empty()) {
-            std::cerr << "No possible words left based on feedback!" << std::endl;
+            std::cerr << "No possible words left based on data provided!" << std::endl;
             break;
         }
     }
