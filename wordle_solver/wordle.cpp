@@ -23,11 +23,9 @@ std::vector<std::string> loadDictionary(const std::string &filePath) {
 }
 std::string getFeedback() {
     std::string feedback;
-    std::cout << "Enter data from the guess-" << RESET_TEXT << "("
-          << GREEN_TEXT << "G" << RESET_TEXT << " for Green, "
-          << YELLOW_TEXT << "Y" << RESET_TEXT << " for Yellow, "
-          << "-" << " for Grey): ";
+    std::cout << "Enter data from the guess-" << RESET_TEXT << "("<< GREEN_TEXT << "G" << RESET_TEXT << " for Green, "<< YELLOW_TEXT << "Y" << RESET_TEXT << " for Yellow, "<< "-" << " for Grey): ";
     std::cin >> feedback;
+    std::transform(feedback.begin(), feedback.end(), feedback.begin(), ::toupper);
     return feedback;
 }
 bool isValidWord(const std::string &word, const std::string &guess, const std::string &feedback) {
@@ -91,13 +89,13 @@ int main() {
     while (true) {
         guess_num++;
         std::string guess = makeGuess(words);
-        std::cout << CYAN_TEXT <<  "Guess: " << RESET_TEXT << RED_TEXT << guess << RESET_TEXT << std::endl;
+        std::cout << CYAN_TEXT << "Guess: " << RESET_TEXT << RED_TEXT << guess << RESET_TEXT << std::endl;
         std::string feedback = getFeedback();
         if (feedback == "GGGGG") {
-            if(guess_num==1){
-                std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT<< " attempt." RESET_TEXT << std::endl;
-            }else{
-                std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT<< " attempts." RESET_TEXT << std::endl;
+            if (guess_num == 1) {
+                std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT << " attempt." << RESET_TEXT << std::endl;
+            } else {
+                std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT << " attempts." << RESET_TEXT << std::endl;
             }
             break;
         }
