@@ -11,3 +11,5 @@
 ### With Specific Documentation
 
 - **Anagram** -> Finds all possible anagrams for a given word. Use `--custom-dictionary filename.txt` for special comparisons to a custom dictionary (it chooses dictionary.txt by default).
+- **Numerical Integral** -> Parses an expression and calculates the area under the curve for the parsed function by reimann sums, trapezoid sums, and simpsons rules.
+- **Newton's Root Finder** -> Parses an expression and calculates the root of the parsed function by iterating guesses based on newton's rule.
