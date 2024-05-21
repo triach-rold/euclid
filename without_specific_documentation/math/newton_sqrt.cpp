@@ -2,10 +2,8 @@
 #include <cmath>
 #include <chrono>
 #include <cassert>
-
 using namespace std;
 using namespace std::chrono;
-
 double newton_sqrt(int a) {
     double x = a / 2.0; // Initial guess
     double epsilon = 1e-6; // Tolerance
@@ -14,7 +12,6 @@ double newton_sqrt(int a) {
     }
     return x;
 }
-
 int main() {
     // Test cases using cassert
     assert(abs(newton_sqrt(0) - sqrt(0)) < 1e-6); // Square root of 0
