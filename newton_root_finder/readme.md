@@ -24,10 +24,6 @@ For any general iteration i, this can be said to be -
 
 ![image](sources/3.png)
 
-\end{document}
-
-
-
 ## How to run it?
 1. The file is in C++. It requires you to have the GNU C++ compiler (doesn't need to be GNU, but it's tested on GNU) so that it can be turned into an executable for your computer to run.
 2. Assuming you already have GNU, open up your terminal of choice and put in the command `g++ newton.cpp` in the directory where you've saved the file. (You can use the `cd` command to navigate through your directories.)
