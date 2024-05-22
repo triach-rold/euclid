@@ -1,6 +1,10 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#define RED_TEXT "\033[1;31m"
+#define GREEN_TEXT "\033[1;32m"
+#define YELLOW_TEXT "\033[1;33m"
+#define RESET_TEXT "\033[0m"
 double sterling_factorial(int n) {
     if (n < 0) {
         std::cerr << "Error: Factorial of a negative number is undefined." << std::endl;
