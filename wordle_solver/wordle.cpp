@@ -62,7 +62,6 @@ bool isValidWord(const std::string &word, const std::string &guess, const std::s
             }
         }
     }
-
     return true;
 }
 std::vector<std::string> filterWords(const std::vector<std::string> &words, const std::string &guess, const std::string &feedback) {
