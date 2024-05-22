@@ -7,7 +7,7 @@
 #define RESET_TEXT "\033[0m"
 double sterling_factorial(int n) {
     if (n < 0) {
-        std::cerr << "Error: Factorial of a negative number is undefined." << std::endl;
+        std::cerr << RED_TEXT "Error: Factorial of a negative number is undefined."  RESET_TEXT<< std::endl;
         return NAN;
     }
     if (n == 0) {
@@ -17,7 +17,7 @@ double sterling_factorial(int n) {
 }
 unsigned long long factorial(int n) {
     if (n < 0) {
-        std::cerr << "Error: Factorial of a negative number is undefined." << std::endl;
+        std::cerr << RED_TEXT  "Error: Factorial of a negative number is undefined." RESET_TEXT<< std::endl;
         return 0;
     }
     unsigned long long result = 1;
@@ -27,10 +27,10 @@ unsigned long long factorial(int n) {
     return result;
 }
 int main() {
-    for (int n = 0; n <= 30; ++n) {
+    for (int n = -1; n <= 30; ++n) {
         std::cout << "n = " << n << std::endl;
-        std::cout << "Sterling's Approximation: " << sterling_factorial(n) << std::endl;
-        std::cout << "Factorial: " << factorial(n) << std::endl;
+        std::cout <<  YELLOW_TEXT "Sterling's Approximation: " << sterling_factorial(n) << RESET_TEXT << std::endl;
+        std::cout <<  GREEN_TEXT "Factorial: " << factorial(n) << RESET_TEXT << std::endl;
         std::cout << ((factorial(n) - sterling_factorial(n)) / static_cast<double>(factorial(n))) * 100;
         std::cout << std::endl;
     }
