@@ -23,7 +23,7 @@ std::vector<std::string> loadDictionary(const std::string &filePath) {
 }
 std::string getFeedback() {
     std::string feedback;
-    std::cout << "Enter data from the guess-" << RESET_TEXT << "("<< GREEN_TEXT << "G" << RESET_TEXT << " for Green, "<< YELLOW_TEXT << "Y" << RESET_TEXT << " for Yellow, "<< "-" << " for Grey): ";
+    std::cout << "Enter data from the guess-" << RESET_TEXT << "(" << GREEN_TEXT << "G" << RESET_TEXT << " for Green, "<< YELLOW_TEXT << "Y" << RESET_TEXT << " for Yellow, "<< "-" << " for Grey, or 'invalid' if the word is not allowed): ";
     std::cin >> feedback;
     std::transform(feedback.begin(), feedback.end(), feedback.begin(), ::toupper);
     return feedback;
@@ -56,7 +56,7 @@ bool isValidWord(const std::string &word, const std::string &guess, const std::s
     for (size_t i = 0; i < guess.size(); ++i) {
         if (feedback[i] == '-') {
             for (size_t j = 0; j < word.size(); ++j) {
-                if (word[j] == guess[i]) {
+                if (word[j] == guess[i] && !used[j]) {
                     return false;
                 }
             }
@@ -91,6 +91,10 @@ int main() {
         std::string guess = makeGuess(words);
         std::cout << CYAN_TEXT << "Guess: " << RESET_TEXT << RED_TEXT << guess << RESET_TEXT << std::endl;
         std::string feedback = getFeedback();
+        if (feedback == "INVALID") {
+            guess_num--;
+            continue;
+        }
         if (feedback == "GGGGG") {
             if (guess_num == 1) {
                 std::cout << CYAN_TEXT << "Word has been found in " << RESET_TEXT << RED_TEXT << guess_num << CYAN_TEXT << " attempt." << RESET_TEXT << std::endl;
