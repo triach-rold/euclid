@@ -5,6 +5,7 @@
 #define GREEN_TEXT "\033[1;32m"
 #define YELLOW_TEXT "\033[1;33m"
 #define RESET_TEXT "\033[0m"
+#define CYAN_TEXT "\033[1;36m"
 double sterling_factorial(int n) {
     if (n < 0) {
         std::cerr << RED_TEXT "Error: Factorial of a negative number is undefined."  RESET_TEXT<< std::endl;
@@ -31,7 +32,7 @@ int main() {
         std::cout << "n = " << n << std::endl;
         std::cout <<  YELLOW_TEXT "Sterling's Approximation: " << sterling_factorial(n) << RESET_TEXT << std::endl;
         std::cout <<  GREEN_TEXT "Factorial: " << factorial(n) << RESET_TEXT << std::endl;
-        std::cout << ((factorial(n) - sterling_factorial(n)) / static_cast<double>(factorial(n))) * 100;
+        std::cout <<  CYAN_TEXT ((factorial(n) - sterling_factorial(n)) / static_cast<double>(factorial(n))) * 100 << RESET_TEXT << std:endl;
         std::cout << std::endl;
     }
     return 0;
