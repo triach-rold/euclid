@@ -19,6 +19,7 @@ C++ code to solve integrals via the basic definition of a definite integral.
 
 ## Supported Functions?
 
+### Trigonometric Functions
 * sin(x)
 * cos(x)
 * tan(x)
@@ -34,6 +35,7 @@ C++ code to solve integrals via the basic definition of a definite integral.
 * asinh(x)
 * acosh(x)
 * atanh(x)
+### Logarithmic/Exponential Functions
 * log(x)
 * ln(x)
 * log(base)(x)
@@ -44,5 +46,7 @@ C++ code to solve integrals via the basic definition of a definite integral.
 * exp2(x)
 * exp10(x)
 * cbrt(x)
+
+### Miscellaneous Functions
 * abs(x)
 * sgn(x)
